@@ -5,48 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
-    <title>Sample Todo App</title>
+    <title>iku-min.github.io</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
       <div id="app">
-        <h2>Todos:</h2>
-        <ol>
-          <li v-for="todo in todos">
+        <h2>iku-min</h2>
+        <h2>SNS</h2>
+        <ul>
+          <li v-for="item in sns">
             <label>
-              <input
-                type="checkbox"
-                v-on:change="toggle(todo)"
-                v-bind:checked="todo.done"
-              />
-
-              <del v-if="todo.done">
-                {{ todo.text }}
-              </del>
-              <span v-else>
-                {{ todo.text }}
+              <span>
+                <a v-bind:href="item.url">{{ item.text }}</a>
               </span>
             </label>
           </li>
-        </ol>
+        </ul>
       </div>
     </div>
     <script>
       new Vue({
         el: "#app",
         data: {
-          todos: [
-            { text: "Learn JavaScript", done: false },
-            { text: "Learn Vue", done: false },
-            { text: "Play around in JSFiddle", done: true },
-            { text: "Build something awesome", done: true }
+          sns: [
+            { text: "Twitter", url:"http://twitter.com/" },
+            { text: "LinkedIn", url:"https://www.linkedin.com/" },
+            { text: "Note", url:"https://note.com/" }
           ]
-        },
-        methods: {
-          toggle: function(todo){
-            todo.done = !todo.done
-          }
         }
       })
     </script>
