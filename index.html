@@ -18,7 +18,7 @@
           <li v-for="item in sns">
             <label>
               <span>
-                <i v-bind:class="item.icon"></i><a v-bind:href="item.url">{{ item.text }}</a>
+                <a v-bind:href="item.url"><i v-bind:class="item.icon"></i>{{ item.text }}</a>
               </span>
             </label>
           </li>
@@ -32,7 +32,7 @@
           sns: [
             { text: "Twitter", url:"http://twitter.com/", icon:"fa-brands fa-twitter-square"},
             { text: "LinkedIn", url:"https://www.linkedin.com/", icon:"fa-brands fa-linkedin" },
-            { text: "Note", url:"https://note.com/" }
+            { text: "Note", url:"https://note.com/", icon:"fa-solid fa-note" }
           ]
         }
       })
