@@ -7,6 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <title>iku-min.github.io</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
   <body>
     <div class="container">
@@ -17,7 +18,7 @@
           <li v-for="item in sns">
             <label>
               <span>
-                <a v-bind:href="item.url">{{ item.text }}</a>
+                <i v-bind:class="item.icon"></i><a v-bind:href="item.url">{{ item.text }}</a>
               </span>
             </label>
           </li>
@@ -29,8 +30,8 @@
         el: "#app",
         data: {
           sns: [
-            { text: "Twitter", url:"http://twitter.com/" },
-            { text: "LinkedIn", url:"https://www.linkedin.com/" },
+            { text: "Twitter", url:"http://twitter.com/", icon:"fa-brands fa-twitter-square"},
+            { text: "LinkedIn", url:"https://www.linkedin.com/", icon:"fa-brands fa-linkedin" },
             { text: "Note", url:"https://note.com/" }
           ]
         }
